@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
 
+interface State {
+    film: {}
+}
+
 export default class MovieApp extends Component {
-    state = {
+    state: State = {
         // film: null,
         film: {
             Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
