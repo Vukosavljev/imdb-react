@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 interface Props {
     sumbitFilm: any,
 }
 
-export default class Search extends Component <Props> {
+export default class Search extends Component <Props, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             filmTitle: '',
         }
         
+    }
+
+    changeHandler = (event: Event) => {
+        this.setState({ filmTitle: event.target.value })
     }
 
     render() {
@@ -20,7 +24,10 @@ export default class Search extends Component <Props> {
                 <form className="col s12" onSubmit={this.props.sumbitFilm} >
                     <div className="input-field col s12">
                     <p>Type a title of film: </p>
-                        <input id="search-film" type="text" name="film" placeholder="film title" />
+                        <input id="search-film" value={this.state.filmTitle}
+                        type="text" name="film"
+                        placeholder="film title"
+                        onChange={(event) => this.changeHandler} />
                     </div>
                     <div className="row">
                         <div className="col s12 center-align">
