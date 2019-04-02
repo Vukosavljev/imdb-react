@@ -42,7 +42,7 @@
     
     .flex .poster-image {
         width: 40%;
-        max-height: 300px;
+        height: auto;
         margin: 20px
     }
     

@@ -56,6 +56,7 @@ export default class Search extends Component <Props, any> {
         )
     }
 }
+
 const searchContainer = {
     border: '2px solid #ccc',
     marginTop: '20px',
