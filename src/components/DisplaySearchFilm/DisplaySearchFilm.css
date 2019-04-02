@@ -1,0 +1,38 @@
+.film-container {
+    border: 2px solid black;
+    text-align: center;
+    font-weight: 800;
+}
+img {
+    display: inline-block;
+}
+
+.poster-image {
+    width: 90%;
+    /* max-height: 200px; */
+}
+.description {
+    width: 90%;
+    margin: 0 auto;
+}
+.description p {
+    padding: 10px 0;
+}
+
+
+@media screen and (min-width: 600px) {
+    .flex {
+        display: flex;
+    }
+    
+    .flex .poster-image {
+        width: 40%;
+        max-height: 300px;
+        margin: 20px
+    }
+    
+    .description {
+        text-align: left;
+        padding: 10px;
+    }
+}

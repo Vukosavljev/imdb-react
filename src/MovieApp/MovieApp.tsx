@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
+import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm'
 
 interface State {
     film: {}, 
@@ -25,20 +26,29 @@ export default class MovieApp extends Component {
             Metascore:"35", imdbRating:"6.8", imdbVotes: "231,324", imdbID:"tt1270797",
             Type: "movie", DVD:"18 Jun 2013", BoxOffice: "N/A", Production:"Vis",
             Website:"N/A", Response:"True"
-        } 
+        },
+        // {Title:"Rocky",Year:"1976",Rated:"PG",Released:"03 Dec 1976",Runtime:"120 min",Genre:"Drama, Sport",
+        // Director:"John G. Avildsen",Writer:"Sylvester Stallone",Actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
+        // Plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
+        // Language:"English",Country:"USA",Awards:"Won 3 Oscars. Another 17 wins & 21 nominations.",
+        // Poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
+        // Ratings:[{Source:"Internet Movie Database",Value:"8.1/10"},{Source:"Rotten Tomatoes",Value:"93%"},{Source:"Metacritic",Value:"70/100"}],
+        // Metascore:"70",imdbRating:"8.1",imdbVotes:"465,421",imdbID:"tt0075148",Type:"movie",DVD:"07 Aug 2006",
+        // BoxOffice:"N/A",Production:"United Artists",Website:"http://rockythemovie.com/",Response:"True"}
+         
     }
 
     searchFilm = (event: React.ChangeEvent<HTMLInputElement>, film: string): void => {
         event.preventDefault();
         this.setState({ filmTitle: film })
     }
-    componentDidUpdate() {
-        if (this.state.filmTitle) {
-            fetch(`http://www.omdbapi.com/?apikey=7852d187&t=${this.state.filmTitle}`)
-                .then(response => response.json())
-                .then(data => console.log(data));
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (this.state.filmTitle !== ) {
+    //         fetch(`http://www.omdbapi.com/?apikey=7852d187&t=${this.state.filmTitle}`)
+    //             .then(response => response.json())
+    //             .then(data => console.log(data));
+    //     }
+    // }
     // componentDidMount() {
     //     console.log(this.state.filmTitle)
     // //     fetch('http://www.omdbapi.com/?apikey=7852d187&t=Venom')
@@ -49,7 +59,7 @@ export default class MovieApp extends Component {
         return (
             <div className="row">
                 <Search sumbitFilm={this.searchFilm} />
-                
+                <DisplaySearchFilm filmDetails={this.state.film} />
             </div>
         )
     }
