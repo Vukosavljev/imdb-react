@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Search from '../components/Search';
 
 interface State {
-    film: {}
+    film: {}, 
+    filmTitle: string,
 }
 
 export default class MovieApp extends Component {
     state: State = {
         // film: null,
+        filmTitle: '',
         film: {
             Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
             Runtime: "112 min", Genre:"Action, Sci-Fi", Director: "Ruben Fleischer",
@@ -26,15 +28,22 @@ export default class MovieApp extends Component {
         } 
     }
 
-    searchFilm = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    searchFilm = (event: React.ChangeEvent<HTMLInputElement>, film: string): void => {
         event.preventDefault();
-        console.log(event.target.value);
+        this.setState({ filmTitle: film })
+    }
+    componentDidUpdate() {
+        if (this.state.filmTitle) {
+            fetch(`http://www.omdbapi.com/?apikey=7852d187&t=${this.state.filmTitle}`)
+                .then(response => response.json())
+                .then(data => console.log(data));
+        }
     }
     // componentDidMount() {
-    //     fetch('http://www.omdbapi.com/?apikey=7852d187&t=Venom')
-    //         .then(response => response.json())
-    //         .then(data => console.log(data));
+    //     console.log(this.state.filmTitle)
+    // //     fetch('http://www.omdbapi.com/?apikey=7852d187&t=Venom')
     // }
+
 
     render() {
         return (
