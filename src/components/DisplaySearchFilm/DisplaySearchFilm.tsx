@@ -1,5 +1,7 @@
 import React from 'react';
 import './DisplaySearchFilm.css';
+import starBlack from '../../assets/images/star.png'
+import starYellow from '../../assets/images/star-yellow.png'
 
 export default function DisplaySearchFilm(props: any) {
 
@@ -9,7 +11,10 @@ export default function DisplaySearchFilm(props: any) {
   return (
     <div className="film-container">
 
-      <h4>{Title}</h4>
+      <h4>{Title}
+      {/* <img src={starBlack} alt="star" className="icon" /> */}
+      <img src={starYellow} alt="star" className="icon" />
+      </h4>
       <div className="flex">
 
         <img className="poster-image" src={Poster} alt={Title} />
@@ -21,7 +26,7 @@ export default function DisplaySearchFilm(props: any) {
           <p>Runtime: {Runtime}</p>
           <p>Genre: {Genre}</p>
           <a href={`https://www.imdb.com/title/${imdbID}/`} target="_blank">See full description on imdb</a>
-          
+
         </div>
 
       </div>

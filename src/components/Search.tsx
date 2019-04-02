@@ -18,6 +18,7 @@ export default class Search extends Component <Props, any> {
 
     }
 
+    // calling function from MovieApp component and clearing filmtitle in state
     sumbitHandler = () => {
         this.props.sumbitFilm(event, this.state.filmTitle)
         this.setState({ filmTitle: '' })
@@ -26,7 +27,7 @@ export default class Search extends Component <Props, any> {
     render() {
         
         return (
-            <div className="row">
+            <div className="row" style={searchContainer}>
 
                 <h2 className="center-align">Search for movies</h2>
 
@@ -54,4 +55,9 @@ export default class Search extends Component <Props, any> {
     
         )
     }
+}
+const searchContainer = {
+    border: '2px solid #ccc',
+    marginTop: '20px',
+    padding: '10',
 }
