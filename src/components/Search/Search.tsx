@@ -29,8 +29,6 @@ export default class Search extends Component <Props, any> {
         return (
             <div className="row" style={searchContainer}>
 
-                <h2 className="center-align">Search for movies</h2>
-
                 <form className="col s12" onSubmit={this.sumbitHandler} >
 
                     <div className="input-field col s12">

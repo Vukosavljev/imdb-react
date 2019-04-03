@@ -7,10 +7,10 @@ export default class Favorites extends Component <any, any> {
 
   render() {
     return (
-      <div>
-        {this.props.favorites.map(f => 
+      <div style={{display: 'flex',  flex: '2 1 auto'}}>
+        { this.props.favorites.map(f => 
         
-         <DisplayFavorites key={f.Title} /> 
+         <DisplayFavorites key={f.imdbID} filmDetails={f} /> 
         )}
       </div>
     )

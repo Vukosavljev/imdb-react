@@ -3,15 +3,12 @@ import { BrowserRouter } from 'react-router-dom';
 import MovieApp from './MovieApp/MovieApp';
 
 import 'materialize-css/dist/css/materialize.min.css';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
           <MovieApp />
-        </div>
       </BrowserRouter>
     );
   }

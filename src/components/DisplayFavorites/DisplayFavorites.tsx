@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function DisplayFavorites() {
+export default function DisplayFavorites(props) {
+
+    const { Title, Actors, Released, imdbRating, Runtime, Genre, Poster, imdbID, favorite } = props.filmDetails;
+
   return (
-    <div>
-      <h5></h5>
+    <div className="film">
+      <h5> {Title} </h5>
     </div>
   )
 }
