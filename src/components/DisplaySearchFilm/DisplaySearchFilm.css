@@ -23,11 +23,11 @@
 }
 
 .icon {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     top: 30%;
-    right: 8%;
+    right: 4%;
     cursor: pointer;
 }
 .icon:hover {
@@ -44,6 +44,13 @@
         width: 40%;
         height: auto;
         margin: 20px
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        top: 30%;
+        right: 8%;
     }
     
     .description {

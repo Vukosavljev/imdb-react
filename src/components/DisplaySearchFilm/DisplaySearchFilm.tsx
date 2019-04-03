@@ -6,7 +6,7 @@ import starYellow from '../../assets/images/star-yellow.png'
 export default function DisplaySearchFilm(props: any) {
 
 
-  const { Title, Actors, Released, imdbRating, Runtime, Genre, Poster, imdbID } = props.filmDetails;
+  const { Title, Actors, Released, imdbRating, Runtime, Genre, Poster, imdbID, favorite } = props.filmDetails;
   
 
   return (
@@ -14,13 +14,13 @@ export default function DisplaySearchFilm(props: any) {
 
       { props.error ?
 
-      <h5> I'm sorry the name you asked for <strong>({props.filmTitle})</strong> does not exist, please try again.</h5> :
+      <h5 > I'm sorry the name you asked for <strong>({props.filmTitle})</strong> does not exist, please try again.</h5> :
 
       <>
         <h4>{Title}
-        {/* <img src={starBlack} alt="star" className="icon" /> */}
-        <img src={starYellow} alt="star" className="icon" />
+        <img src={favorite ? starYellow : starBlack} alt="star" className="icon" onClick={props.toggleFavorite} />
         </h4>
+        
         <div className="flex">
 
           <img className="poster-image" src={Poster} alt={Title} />
