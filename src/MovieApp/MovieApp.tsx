@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
-import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm'
+import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm';
+import Favorites from '../components/Favorites/Favorites'
 
 interface State {
     film: any, 
@@ -77,7 +78,6 @@ export default class MovieApp extends Component {
     }
 
     addFavorite = favMovie => {
-        console.log('add')
         this.setState({ favorites: [...this.state.favorites, favMovie] })
     }
 
@@ -90,11 +90,15 @@ export default class MovieApp extends Component {
     render() {
         return (
             <div className="row">
+
                 <Search sumbitFilm={this.fetchFilm} />
                 { this.state.filmTitle ? <DisplaySearchFilm filmDetails={this.state.film}
                  error={this.state.error}
                  filmTitle={this.state.filmTitle}
                  toggleFavorite={this.toggleFavorite} /> : null }
+
+                 <Favorites favorites={this.state.favorites} />
+
             </div>
         )
     }
