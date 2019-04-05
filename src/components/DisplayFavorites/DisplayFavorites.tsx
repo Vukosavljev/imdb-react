@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import './DisplayFavorites.css'
 
 export default function DisplayFavorites(props) {
 

@@ -11,12 +11,12 @@
 }
 
 .poster-image {
-    width: 90%;
-    /* max-height: 200px; */
+    width: 80%;
+    max-height: 450px;
 }
 .description {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 10px auto;
 }
 .description p {
     padding: 10px 0;
@@ -45,6 +45,9 @@
         height: auto;
         margin: 20px
     }
+    .poster-image {
+        max-height: 300px;
+    }
 
     .icon {
         width: 20px;
@@ -56,5 +59,15 @@
     .description {
         text-align: left;
         padding: 10px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .poster-image {
+        max-height: 500px;
+    }
+    .description {
+        text-align: left;
+        padding: 30px;
     }
 }

@@ -32,7 +32,7 @@ export default class Search extends Component <Props, any> {
                 <form className="col s12" onSubmit={this.sumbitHandler} >
 
                     <div className="input-field col s12">
-                    <h5>Type a title of film: </h5>
+                    <h5>Type a title of movie: </h5>
                         <input id="search-film" value={this.state.filmTitle}
                         type="text" name="film"
                         placeholder="film title"
@@ -58,5 +58,5 @@ export default class Search extends Component <Props, any> {
 const searchContainer = {
     border: '2px solid #ccc',
     marginTop: '20px',
-    padding: '10',
+    padding: '10px',
 }

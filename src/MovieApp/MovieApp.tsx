@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Header from '../components/Header/Header';
 import Search from '../components/Search/Search';
 import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm';
-import Favorites from '../components/Favorites/Favorites'
+import Favorites from '../components/Favorites/Favorites';
+
+import './MovieApp.css';
 
 interface State {
     film: any, 
@@ -13,7 +15,6 @@ interface State {
 
 export default class MovieApp extends Component {
     state: State = {
-        // film: null,
         filmTitle: 'adsf',
         film: 
             {Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
@@ -31,14 +32,6 @@ export default class MovieApp extends Component {
             Type: "movie", DVD:"18 Jun 2013", BoxOffice: "N/A", Production:"Vis",
             Website:"N/A", Response:"True"
         },
-        // {Title:"Rocky",Year:"1976",Rated:"PG",Released:"03 Dec 1976",Runtime:"120 min",Genre:"Drama, Sport",
-        // Director:"John G. Avildsen",Writer:"Sylvester Stallone",Actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
-        // Plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
-        // Language:"English",Country:"USA",Awards:"Won 3 Oscars. Another 17 wins & 21 nominations.",
-        // Poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-        // Ratings:[{Source:"Internet Movie Database",Value:"8.1/10"},{Source:"Rotten Tomatoes",Value:"93%"},{Source:"Metacritic",Value:"70/100"}],
-        // Metascore:"70",imdbRating:"8.1",imdbVotes:"465,421",imdbID:"tt0075148",Type:"movie",DVD:"07 Aug 2006",
-        // BoxOffice:"N/A",Production:"United Artists",Website:"http://rockythemovie.com/",Response:"True"},
         error: false,
         
         favorites: [
@@ -78,8 +71,8 @@ export default class MovieApp extends Component {
 
     fetchFilm = (event: React.ChangeEvent<HTMLInputElement>, film: string): void => {
         event.preventDefault();
-        this.setState({ filmTitle: film });
         // if (film && film !== this.state.filmTitle) {
+            // this.setState({ filmTitle: film });
         //     fetch(`http://www.omdbapi.com/?apikey=7852d187&t=${film}`)
         //     .then(response => response.json())
         //     .then(data => {
@@ -125,7 +118,7 @@ export default class MovieApp extends Component {
             <>
                 <Header />
                 
-                <div className="row">
+                <div className="row app-container">
 
                     <Search sumbitFilm={this.fetchFilm} />
                     { this.state.filmTitle ? <DisplaySearchFilm filmDetails={this.state.film}
@@ -135,7 +128,7 @@ export default class MovieApp extends Component {
 
                 </div>
 
-                 <Favorites favorites={this.state.favorites} />
+                <Favorites favorites={this.state.favorites} />
             </>
         )
     }

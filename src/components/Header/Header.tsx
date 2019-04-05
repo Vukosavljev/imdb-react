@@ -4,7 +4,7 @@ import './Header.css'
 export default function Header() {
   return (
     <header>
-      <h2>Search for movies</h2>
+      <h2>Movie Browser</h2>
     </header>
   )
 }
