@@ -15,6 +15,7 @@ interface State {
 
 export default class MovieApp extends Component {
     state: State = {
+        //set '' below
         filmTitle: 'adsf',
         film: 
             {Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
@@ -45,7 +46,8 @@ export default class MovieApp extends Component {
         BoxOffice:"N/A",Production:"United Artists",Website:"http://rockythemovie.com/",Response:"True"},
         {Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
             Runtime: "112 min", Genre:"Action, Sci-Fi", Director: "Ruben Fleischer",
-            Writer: "Jeff Pinkner (screenplay by), Scott Rosenberg (screenplay by), Kelly Marcel (screenplay by), Jeff Pinkner (screen story by), Scott Rosenberg (screen story by), Todd McFarlane (Marvel's Venom Character created by), David Michelinie (Marvel's Venom Character created by)",
+            Writer: `Jeff Pinkner (screenplay by), Scott Rosenberg (screenplay by), Kelly Marcel (screenplay by), Jeff Pinkner (screen story by), Scott Rosenberg (screen story by),
+            Todd McFarlane (Marvel's Venom Character created by), David Michelinie (Marvel's Venom Character created by)`,
             Actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
             Plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
             Language: "English", Country: "China, USA", Awards: "N/A",
@@ -121,7 +123,9 @@ export default class MovieApp extends Component {
                 <div className="row app-container">
 
                     <Search sumbitFilm={this.fetchFilm} />
-                    { this.state.filmTitle ? <DisplaySearchFilm filmDetails={this.state.film}
+
+                    { this.state.filmTitle ? 
+                    <DisplaySearchFilm filmDetails={this.state.film}
                     error={this.state.error}
                     filmTitle={this.state.filmTitle}
                     toggleFavorite={this.toggleFavorite} /> : null }
