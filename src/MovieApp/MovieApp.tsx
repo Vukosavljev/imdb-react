@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 import Search from '../components/Search/Search';
 import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm';
 import Favorites from '../components/Favorites/Favorites';
 
+import { Route, Link } from 'react-router-dom';
 import './MovieApp.css';
 
 interface State {
@@ -16,7 +18,7 @@ interface State {
 export default class MovieApp extends Component {
     state: State = {
         //set '' below
-        filmTitle: 'adsf',
+        filmTitle: 'a',
         film: 
             {Title: "Venom", Year: "2018", Rated: "PG-13", Released: "05 Oct 2018",
             Runtime: "112 min", Genre:"Action, Sci-Fi", Director: "Ruben Fleischer",
@@ -74,7 +76,7 @@ export default class MovieApp extends Component {
     fetchFilm = (event: React.ChangeEvent<HTMLInputElement>, film: string): void => {
         event.preventDefault();
         // if (film && film !== this.state.filmTitle) {
-            // this.setState({ filmTitle: film });
+        //     this.setState({ filmTitle: film });
         //     fetch(`http://www.omdbapi.com/?apikey=7852d187&t=${film}`)
         //     .then(response => response.json())
         //     .then(data => {
@@ -87,7 +89,6 @@ export default class MovieApp extends Component {
         //     });
             
         // }
-        
     }
 
     toggleFavorite = () => {
@@ -120,17 +121,21 @@ export default class MovieApp extends Component {
             <>
                 <Header />
                 
-                <div className="row app-container">
+                <Route exact path="/" render={ () => (
+                    <div className="row app-container">
 
-                    <Search sumbitFilm={this.fetchFilm} />
+                        <Search sumbitFilm={this.fetchFilm} />
 
-                    { this.state.filmTitle ? 
-                    <DisplaySearchFilm filmDetails={this.state.film}
-                    error={this.state.error}
-                    filmTitle={this.state.filmTitle}
-                    toggleFavorite={this.toggleFavorite} /> : null }
+                        { this.state.filmTitle ? 
+                        <DisplaySearchFilm filmDetails={this.state.film}
+                        error={this.state.error}
+                        filmTitle={this.state.filmTitle}
+                        toggleFavorite={this.toggleFavorite} /> : null }
 
-                </div>
+                    </div>)
+                } />
+
+                <Footer />
 
                 <Favorites favorites={this.state.favorites} />
             </>

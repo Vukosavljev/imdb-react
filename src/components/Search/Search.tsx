@@ -18,16 +18,16 @@ export default class Search extends Component <Props, any> {
 
     }
 
-    // calling function from MovieApp component and clearing filmtitle in state
+    // calling function from MovieApp component and clearing filmTitle in state
     sumbitHandler = () => {
         this.props.sumbitFilm(event, this.state.filmTitle)
         this.setState({ filmTitle: '' })
     }
 
     render() {
-        
+
         return (
-            <div className="row" style={searchContainer}>
+            <div className="row card" style={{ margin: '20px auto' }}>
 
                 <form className="col s12" onSubmit={this.sumbitHandler} >
 
@@ -53,10 +53,4 @@ export default class Search extends Component <Props, any> {
     
         )
     }
-}
-
-const searchContainer = {
-    border: '2px solid #ccc',
-    marginTop: '20px',
-    padding: '10px',
 }

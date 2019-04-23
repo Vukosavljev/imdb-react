@@ -19,7 +19,7 @@ export default function DisplaySearchFilm(props: any) {
   
 
   return (
-    <div className="film-container">
+    <div className="film-container card">
 
       { props.error ?
 
@@ -45,7 +45,7 @@ export default function DisplaySearchFilm(props: any) {
             <p>imdbRating: {imdbRating} <small>/10</small></p>
             <p>Runtime: {runtime}</p>
             <p>Genre: {genre}</p>
-            <p className="plot-text">Short Descriptio:{plot}</p>
+            <p className="plot-text">Short Descriptio: {plot}</p>
             <a href={`https://www.imdb.com/title/${imdbID}/`} target="_blank">See full description on imdb</a>
           </div>
 

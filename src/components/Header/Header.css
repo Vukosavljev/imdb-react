@@ -3,10 +3,28 @@ header {
 }
 
 header h2 {
-    margin: 0 auto;
+    margin: 0 auto 20px;
     text-align: center;
     font-size: 2.5rem;
     padding: 10px;
+}
+
+.Navlinks {
+    width: 10%;
+    position: relative;
+    bottom: 10px;
+}
+.Navlinks a {
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #ccc;
+}
+
+.Navlinks a:hover,
+.Navlinks a:active, 
+.Navlinks a.active {
+    color: rgb(64, 180, 165);
 }
 
 @media screen and (min-width: 600px) {

@@ -1,7 +1,7 @@
 .film-container {
-    border: 2px solid #ccc;
     text-align: center;
     font-weight: 800;
+    margin: 20px auto;
 }
 
 .film-container h4 {
