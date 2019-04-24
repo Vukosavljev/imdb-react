@@ -2,13 +2,13 @@ import React from 'react';
 
 import './DisplayFavorites.css'
 
-export default function DisplayFavorites(props) {
-
-    const { Title, Actors, Released, imdbRating, Runtime, Genre, Poster, imdbID, favorite } = props.filmDetails;
+const DisplayFavorites = ({title, actors, released, imdbRating, runtime, genre, poster, imdbID, favorite }) => {
 
   return (
     <div className="film">
-      <h5> {Title} </h5>
+      <h5> {title} </h5>
     </div>
   )
 }
+
+export default DisplayFavorites;
