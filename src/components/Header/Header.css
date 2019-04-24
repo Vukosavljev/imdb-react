@@ -10,13 +10,12 @@ header h2 {
 }
 
 .Navlinks {
-    width: 10%;
     position: relative;
-    bottom: 10px;
+    bottom: 5px;
 }
 .Navlinks a {
     color: black;
-    padding: 10px;
+    padding: 5px;
     background-color: white;
     border: 2px solid #ccc;
 }
@@ -30,5 +29,12 @@ header h2 {
 @media screen and (min-width: 600px) {
     header h2 {
         padding: 20px;
+        margin: 0;
+    }
+    .Navlinks {
+        bottom: 10px;
+    }
+    .Navlinks a {
+        padding: 10px;
     }
 }
