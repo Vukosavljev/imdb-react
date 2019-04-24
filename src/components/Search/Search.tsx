@@ -41,7 +41,7 @@ export default class Search extends Component <Props, any> {
 
                     <div className="row">
                         <div className="col s12 center-align">
-                            <button className="btn waves-effect waves-light" type="submit" >Search
+                            <button className="btn waves-effect waves-light hoverable" type="submit" >Search
                                 <i className="material-icons right">send</i>
                             </button>
                         </div>

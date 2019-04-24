@@ -4,10 +4,12 @@ import Footer from '../components/Footer/Footer';
 import Search from '../components/Search/Search';
 import DisplaySearchFilm from '../components/DisplaySearchFilm/DisplaySearchFilm';
 import Favorites from '../components/Favorites/Favorites';
-import { FilmModel } from '../FilmModel';
 
+
+import { FilmModel } from '../FilmModel';
 import { Route } from 'react-router-dom';
 
+import './MovieApp.css'
 
 interface State {
     film: FilmModel, 
@@ -19,7 +21,7 @@ interface State {
 export default class MovieApp extends Component {
     state: State = {
         //set '' below
-        filmTitle: 'a',
+        filmTitle: '',
         film: 
             {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
             runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
@@ -159,9 +161,11 @@ export default class MovieApp extends Component {
 
     render() {
         return (
-            <>
+            <div className="app">
+
                 <Header />
                 
+                <main className="content">
                 <Route exact path="/" render={ () => (
                     <div className="row app-container">
 
@@ -179,10 +183,11 @@ export default class MovieApp extends Component {
                 <Route path="/favorites" render={() => 
                     <Favorites favorites={this.state.favorites} />
                 }/>
+                </main>
 
                 <Footer />
 
-            </>
+            </div>
         )
     }
 }
