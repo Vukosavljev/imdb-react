@@ -1,13 +1,24 @@
 .film {
-    
+    width: 100%;
+    display: flex;
+    padding: 2%;
 }
-
-
-
+.film img {
+    max-height: 130px;
+}
+.short-desc {
+    width: 70%;
+    text-align: center;
+}
 
 @media screen and (min-width: 600px) {
     .film {
-        border: 2px solid #ccc;
-        flex: 1 1 auto;
+        display: block;
     }
 }
+
+
+
+
+
+

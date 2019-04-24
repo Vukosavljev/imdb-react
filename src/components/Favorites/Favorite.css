@@ -1,0 +1,11 @@
+.FavoriteContainer {
+    margin: 30px auto;
+}
+
+@media screen and (min-width: 600px) {
+    .FavoriteContainer {
+        display: flex;
+        flex: 1 1 auto;
+        border: 2px solid #ccc;
+    }
+}

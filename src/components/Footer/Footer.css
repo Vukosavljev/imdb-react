@@ -1,5 +1,8 @@
 footer {
     background-color: #ccc;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
