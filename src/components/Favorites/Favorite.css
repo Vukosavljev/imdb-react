@@ -4,8 +4,9 @@
 
 @media screen and (min-width: 600px) {
     .FavoriteContainer {
-        display: flex;
-        flex: 1 1 auto;
-        border: 2px solid #ccc;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 15px;
     }
 }

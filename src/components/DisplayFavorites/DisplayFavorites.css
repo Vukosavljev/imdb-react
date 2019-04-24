@@ -3,9 +3,29 @@
     display: flex;
     padding: 2%;
 }
-.film img {
+.film-year {
+    font-weight: normal;
+    color: grey;
+    font-size: 16px;
+}
+.film > img {
+    display: block;
+    margin: 0 auto;
     max-height: 130px;
 }
+
+.imdb-img {
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.rating-text{
+    vertical-align: middle;
+}
+
 .short-desc {
     width: 70%;
     text-align: center;
@@ -14,6 +34,9 @@
 @media screen and (min-width: 600px) {
     .film {
         display: block;
+    }
+    .short-desc {
+        width: 100%;
     }
 }
 

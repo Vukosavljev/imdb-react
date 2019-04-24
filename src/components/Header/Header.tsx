@@ -7,8 +7,8 @@ export default function Header() {
     <header>
       <h2>Movie Browser</h2>
       <div className="Navlinks" >
-        <NavLink to="/" exact>Home</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/" exact className="hoverable" >Search</NavLink>
+        <NavLink to="/favorites" className="hoverable" >Favorites</NavLink>
       </div>
     </header>
   )
