@@ -4,7 +4,6 @@
 
 @media screen and (min-width: 600px) {
     .FavoriteContainer {
-        width: 80%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-gap: 15px;
