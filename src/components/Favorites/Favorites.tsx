@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import DisplayFavorites from '../DisplayFavorites/DisplayFavorites';
 import './Favorite.css'
 
-export default function Favorites ({favorites}) {
+export default function Favorites ({favoriteMovies}) {
 
     return (
       <div className="FavoriteContainer">
+      
         {
-          favorites.length === 0 ?
+          favoriteMovies.length === 0 ?
             <h4>Your list of favorite movies is empty, please add some.</h4> :
-            favorites.map(fav => <DisplayFavorites key={fav.imdbID} {...fav} />)
+            favoriteMovies.map(fav => <DisplayFavorites key={fav.imdbID} {...fav} />)
         }
       </div>
     )

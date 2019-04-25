@@ -15,13 +15,13 @@ interface State {
     film: FilmModel, 
     filmTitle: string,
     error: boolean,
-    favorites: Array<FilmModel>
+    favoriteMovies: Array<FilmModel>
 }
 
 export default class MovieApp extends Component {
     state: State = {
         //set '' below
-        filmTitle: '',
+        filmTitle: 'aa',
         film: 
             {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
             runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
@@ -30,60 +30,15 @@ export default class MovieApp extends Component {
             imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
         error: false,
         
-        favorites: [
-
-            // {title:"Rocky",year:"1976",rated:"PG",released:"03 Dec 1976",
-            // runtime:"120 min",genre:"Drama, Sport",
-            // actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
-            // plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
-            // poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-            // imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
-            // {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
-            // runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
-            // plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
-            // poster: "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_SX300.jpg",
-            // imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
-            // {title:"Rocky",year:"1976",rated:"PG",released:"03 Dec 1976",
-            // runtime:"120 min",genre:"Drama, Sport",
-            // actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
-            // plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
-            // poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-            // imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
-            // {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
-            // runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
-            // plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
-            // poster: "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_SX300.jpg",
-            // imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
-            // {title:"Rocky",year:"1976",rated:"PG",released:"03 Dec 1976",
-            // runtime:"120 min",genre:"Drama, Sport",
-            // actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
-            // plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
-            // poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-            // imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
-            // {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
-            // runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
-            // plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
-            // poster: "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_SX300.jpg",
-            // imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
-            // {title:"Rocky",year:"1976",rated:"PG",released:"03 Dec 1976",
-            // runtime:"120 min",genre:"Drama, Sport",
-            // actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
-            // plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
-            // poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-            // imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
-            // {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
-            // runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
-            // plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
-            // poster: "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_SX300.jpg",
-            // imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
-            // {title: "Venom", year: "2018", rated: "PG-13", released: "05 Oct 2018",
-            // runtime: "112 min", genre:"Action, Sci-Fi",actors: "Tom Hardy, Michelle Williams, Riz Ahmed, Scott Haze",
-            // plot: "A failed reporter is bonded to an alien entity, one of many entities who have invaded Earth. But the entity takes a liking to Earth and decides to protect it.",
-            // poster: "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_SX300.jpg",
-            // imdbRating:"6.8", imdbID:"tt1270797",response:"True"},
+        favoriteMovies: [
+            {title:"Rocky",year:"1976",rated:"PG",released:"03 Dec 1976",
+            runtime:"120 min",genre:"Drama, Sport",
+            actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
+            plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
+            poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
+            imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
         ]
     }
-
 
     // reaching API
     fetchFilm = (event: React.ChangeEvent<HTMLInputElement>, film: string): void => {
@@ -130,33 +85,32 @@ export default class MovieApp extends Component {
             poster,
             imdbID,
             plot,
-            favorites: false,
+            favorite: false,
         }, error: false })
-
     }
 
     toggleFavorite = () => {
-        const favoriteMovie = this.state.film;
+        const currentFilm = this.state.film;
         //switch the state in film  and  call appropriate function
-        favoriteMovie.favorite ?
+        currentFilm.favorite ?
 
-        (favoriteMovie.favorite = false,
-        this.removeFavorite(favoriteMovie)) :
+        (currentFilm.favorite = false,
+        this.removeFavorite(currentFilm)) :
 
-        (favoriteMovie.favorite = true,
-        this.addFavorite(favoriteMovie));
+        (currentFilm.favorite = true,
+        this.addFavorite(currentFilm));
 
         // adding new object film with new property --favorite
-        this.setState({ film: favoriteMovie })
+        this.setState({ film: currentFilm })
     }
 
     addFavorite = favMovie => {
-        this.setState({ favorites: [...this.state.favorites, favMovie] })
+        this.setState({ favoriteMovies: [...this.state.favoriteMovies, favMovie] })
     }
 
     removeFavorite = favMovie => {
-        const filmList = this.state.favorites.filter(movie => movie.title !== favMovie.title)
-        this.setState({ favorites: filmList })
+        const filmList = this.state.favoriteMovies.filter(movie => movie.title !== favMovie.title)
+        this.setState({ favoriteMovies: filmList })
     }
 
 
@@ -168,8 +122,7 @@ export default class MovieApp extends Component {
                 
                 <main className="content">
                 <Route exact path="/" render={ () => (
-                    <div className="row app-container">
-
+                    <>
                         <Search sumbitFilm={this.fetchFilm} />
 
                         { this.state.filmTitle ? 
@@ -177,13 +130,11 @@ export default class MovieApp extends Component {
                         error={this.state.error}
                         filmTitle={this.state.filmTitle}
                         toggleFavorite={this.toggleFavorite} /> : null }
-
-                    </div>)
+                    </>)
                 }/>
 
-                <Route path="/favorites" render={() => 
-                    <Favorites favorites={this.state.favorites} />
-                }/>
+<               Route path="/favorites" render={() => 
+                    <Favorites favoriteMovies={this.state.favoriteMovies} />}/>
                 </main>
 
                 <Footer />
