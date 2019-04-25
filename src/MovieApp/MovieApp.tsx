@@ -36,7 +36,7 @@ export default class MovieApp extends Component {
             actors:"Sylvester Stallone, Talia Shire, Burt Young, Carl Weathers",
             plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.",
             poster:"https://m.media-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
-            imdbRating:"8.1", imdbID:"tt0075148",response:"True"},
+            imdbRating:"8.1", imdbID:"tt0075148",response:"True", favorite: true},
         ]
     }
 
@@ -114,6 +114,13 @@ export default class MovieApp extends Component {
     }
 
 
+    setMovieFocus = id => {
+        // find selected movie in favoriteMovies
+        const selectedMovie = this.state.favoriteMovies.filter(film => film.imdbID === id)[0]
+        this.setState({film: selectedMovie});
+
+    }
+
     render() {
         return (
             <div className="app">
@@ -134,7 +141,7 @@ export default class MovieApp extends Component {
                 }/>
 
 <               Route path="/favorites" render={() => 
-                    <Favorites favoriteMovies={this.state.favoriteMovies} />}/>
+                    <Favorites favoriteMovies={this.state.favoriteMovies} setMovieFocus={this.setMovieFocus} />}/>
                 </main>
 
                 <Footer />
