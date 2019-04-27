@@ -27,14 +27,13 @@ header h2 {
 }
 
 @media screen and (min-width: 600px) {
+    .content-header {
+        width: 80%;
+        margin: 0 auto;
+    }
     header h2 {
         padding: 20px;
         margin: 0;
     }
-    .Navlinks {
-        bottom: 10px;
-    }
-    .Navlinks a {
-        padding: 10px;
-    }
+
 }
