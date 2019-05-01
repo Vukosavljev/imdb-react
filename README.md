@@ -6,7 +6,7 @@ Home- preko imena traženog pojma i prikazuje naslov filma koji ima najveće pre
 
 Favorites- sadrži sve omiljene filmove koje je korisnik selektovao preko ikonice(zvezdica).
 
-Korišćene tehnologije: ReactJs, (HTML kroz JSX) i CSS.
+Korišćene tehnologije: ReactJs, TypeScript, (HTML kroz JSX) i CSS.
 
 
 Aplikacija se pokreće preko `npm start` na lokalnom serveru http://localhost:3000
