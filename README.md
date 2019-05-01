@@ -4,7 +4,7 @@ Aplikacija se sastoji iz dve stranice: Home i Favorites.
 
 Home- preko imena traženog pojma i prikazuje naslov filma koji ima najveće preklapanje sa ukucanim parametrom. Prikazani film je moguće dodati u omiljene filmove.
 
-Favorites- sadrži sve omiljene filmove koje je korisnik selektovao preko ikonice(zvezdica).
+Favorites- sadrži sve omiljene filmove koje je korisnik selektovao preko ikonice (zvezdica).
 
 Korišćene tehnologije: ReactJs, TypeScript, (HTML kroz JSX) i CSS.
 
